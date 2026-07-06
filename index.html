@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Convite Especial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating hearts background -->
+  <div class="hearts-container" id="hearts"></div>
+
+  <!-- Step 1: Invitation -->
+  <div class="step active" id="s1">
+    <h1>💌 Psst… tenho algo pra te contar</h1>
+    <p>
+      Sabe aquela vontade de estar com alguém especial?<br>
+      Então… preparei uma surpresinha pra você. 💭
+    </p>
+    <button class="btn" onclick="go(2)">Continuar →</button>
+  </div>
+
+  <!-- Step 2: Confirmation -->
+  <div class="step" id="s2">
+    <h1>❤️ Aceita sair comigo?</h1>
+    <p>Escolha sua resposta abaixo:</p>
+    <div class="options">
+      <div class="option">
+        <input type="checkbox" id="yes" aria-label="Sim">
+        <label for="yes">Sim 😍</label>
+      </div>
+      <div class="option" id="no-wrap">
+        <input type="checkbox" id="no" aria-label="Não" tabindex="-1">
+        <label for="no" id="no-label">Não 😢</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 3: Scheduling Form -->
+  <div class="step" id="s3">
+    <h1>🎉 Que lindo! Vamos marcar?</h1>
+    <form id="fm">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label for="data">Data</label>
+        <input type="date" id="data" name="data" required>
+      </div>
+      <div class="form-group">
+        <label for="hora">Hora</label>
+        <input type="time" id="hora" name="hora" required>
+      </div>
+      <div class="form-group">
+        <label for="obs">Observações</label>
+        <textarea id="obs" name="observacoes" placeholder="Alguma preferência ou sugestão?"></textarea>
+      </div>
+      <button type="submit" class="btn" style="width: 100%">Confirmar Encontro 💖</button>
+    </form>
+    <div class="success" id="ok" style="display: none" role="status" aria-live="polite">
+      ✅ Encontro confirmado com sucesso!<br>
+      Mal posso esperar! 💕
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
