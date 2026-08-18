@@ -120,26 +120,26 @@ document.getElementById('fm').addEventListener('submit', async function (e) {
     } else {
       alert('Erro ao enviar. Tente novamente.');
       btn.disabled = false;
-      btn.textContent = 'Confirmar Encontro 💖';
+      btn.textContent = 'Confirmar Açaí 🍇';
     }
   } catch (err) {
     alert('Erro de conexão. Verifique sua internet.');
     btn.disabled = false;
-    btn.textContent = 'Confirmar Encontro 💖';
+    btn.textContent = 'Confirmar Açaí 🍇';
   }
 });
 
-// ===== Floating Hearts Background =====
-var heartsContainer = document.getElementById('hearts');
-var heartEmojis = ['❤', '💕', '💖', '✨', '💗'];
+// ===== Floating Açaí Background =====
+var acaiContainer = document.getElementById('acai');
+var acaiEmojis = ['🍇', '🍓', '🫐', '💜', '✨'];
 
 for (var i = 0; i < 18; i++) {
-  var h = document.createElement('div');
-  h.className = 'heart';
-  h.textContent = heartEmojis[i % heartEmojis.length];
-  h.style.left = Math.random() * 100 + '%';
-  h.style.animationDuration = (7 + Math.random() * 10) + 's';
-  h.style.animationDelay = Math.random() * 6 + 's';
-  h.style.fontSize = (1 + Math.random() * 1.5) + 'rem';
-  heartsContainer.appendChild(h);
+  var a = document.createElement('div');
+  a.className = 'acai';
+  a.textContent = acaiEmojis[i % acaiEmojis.length];
+  a.style.left = Math.random() * 100 + '%';
+  a.style.animationDuration = (7 + Math.random() * 10) + 's';
+  a.style.animationDelay = Math.random() * 6 + 's';
+  a.style.fontSize = (1 + Math.random() * 1.5) + 'rem';
+  acaiContainer.appendChild(a);
 }

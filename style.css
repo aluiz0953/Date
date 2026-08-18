@@ -11,9 +11,34 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
-  color: #fff;
+  background: linear-gradient(135deg, #fff7fb, #ffe7f3, #ffd8eb);
+  color: #3a2340;
   overflow: hidden;
+  position: relative;
+}
+
+/* ===== Decorative Orbs ===== */
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(12px);
+  opacity: 0.7;
+}
+
+.orb-one {
+  width: 420px;
+  height: 420px;
+  background: rgba(255, 111, 165, 0.22);
+  top: -120px;
+  left: -80px;
+}
+
+.orb-two {
+  width: 380px;
+  height: 380px;
+  background: rgba(124, 77, 255, 0.2);
+  bottom: -100px;
+  right: -70px;
 }
 
 /* ===== Step Cards ===== */
@@ -21,15 +46,17 @@ body {
   display: none;
   text-align: center;
   animation: fadeIn 0.6s ease;
-  max-width: 480px;
+  max-width: 520px;
   width: 90vw;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 2.5rem 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 28px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 2px solid rgba(255, 111, 165, 0.2);
+  box-shadow: 0 12px 40px rgba(124, 77, 255, 0.15);
+  position: relative;
+  z-index: 10;
 }
 
 .step.active {
@@ -49,40 +76,41 @@ body {
 
 /* ===== Typography ===== */
 h1 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  background: linear-gradient(90deg, #ff6b6b, #ee5a24, #f0932b);
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  background: linear-gradient(135deg, #ff6fa5, #7c4dff);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-weight: 700;
 }
 
 p {
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.8rem;
+  line-height: 1.7;
+  color: #6b4d67;
   font-size: 1.05rem;
 }
 
 /* ===== Buttons ===== */
 .btn {
   display: inline-block;
-  padding: 14px 36px;
+  padding: 14px 42px;
   border: none;
-  border-radius: 14px;
+  border-radius: 999px;
   font-size: 1.05rem;
   cursor: pointer;
-  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  background: linear-gradient(135deg, #ff6fa5, #7c4dff);
   color: #fff;
   transition: transform 0.2s, box-shadow 0.2s;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.3px;
 }
 
 .btn:hover {
-  transform: scale(1.06);
-  box-shadow: 0 6px 24px rgba(238, 90, 36, 0.45);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(124, 77, 255, 0.3);
 }
 
 .btn:active {
@@ -94,7 +122,7 @@ p {
   display: flex;
   gap: 2rem;
   justify-content: center;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   position: relative;
   min-height: 140px;
   align-items: flex-start;
@@ -117,35 +145,39 @@ p {
   align-items: center;
   gap: 0.6rem;
   padding: 14px 28px;
-  border-radius: 14px;
+  border-radius: 999px;
   cursor: pointer;
   font-size: 1.1rem;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid #ff8ab5;
+  background: #fff;
+  color: #3a2340;
   transition: all 0.3s;
   user-select: none;
   -webkit-user-select: none;
+  font-weight: 600;
 }
 
 .option label::before {
   content: '';
   width: 22px;
   height: 22px;
-  border: 2px solid rgba(255, 255, 255, 0.4);
+  border: 2px solid #ff8ab5;
   border-radius: 7px;
   display: inline-block;
   transition: all 0.3s;
   flex-shrink: 0;
+  background: #fff;
 }
 
 .option input:checked + label {
-  border-color: #2ecc71;
-  background: rgba(46, 204, 113, 0.2);
+  border-color: #7c4dff;
+  background: linear-gradient(135deg, rgba(255, 111, 165, 0.15), rgba(124, 77, 255, 0.15));
 }
 
 .option input:checked + label::before {
-  background: #2ecc71;
-  border-color: #2ecc71;
-  box-shadow: inset 0 0 0 3px #1a1a2e;
+  background: linear-gradient(135deg, #ff6fa5, #7c4dff);
+  border-color: #7c4dff;
+  box-shadow: inset 0 0 0 3px #fff;
 }
 
 /* "Não" wrapper — relative so it stays in flow but can translate */
@@ -156,36 +188,42 @@ p {
 
 /* ===== Step 3 — Form ===== */
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   text-align: left;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 0.35rem;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: #6b4d67;
+  font-weight: 600;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
   padding: 11px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.07);
-  color: #fff;
+  border-radius: 12px;
+  border: 1px solid #ffd8eb;
+  background: rgba(255, 255, 255, 0.6);
+  color: #3a2340;
   font-size: 1rem;
   outline: none;
   transition: border-color 0.3s, box-shadow 0.3s;
   font-family: inherit;
 }
 
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #b595ab;
+}
+
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: #ff6b6b;
-  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.15);
+  border-color: #ff6fa5;
+  box-shadow: 0 0 0 3px rgba(255, 111, 165, 0.15);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .form-group textarea {
@@ -195,14 +233,15 @@ p {
 
 /* ===== Success Message ===== */
 .success {
-  color: #2ecc71;
-  font-size: 1.15rem;
-  line-height: 1.6;
-  padding: 1.5rem 0;
+  color: #7c4dff;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  padding: 2rem 0;
+  font-weight: 600;
 }
 
-/* ===== Floating Hearts Background ===== */
-.hearts-container {
+/* ===== Floating Açaí Background ===== */
+.acai-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -213,9 +252,9 @@ p {
   z-index: -1;
 }
 
-.heart {
+.acai {
   position: absolute;
-  opacity: 0.12;
+  opacity: 0.08;
   animation: floatUp linear infinite;
 }
 
@@ -225,5 +264,27 @@ p {
   }
   100% {
     transform: translateY(-10vh) rotate(360deg);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  .step {
+    padding: 1.8rem 1.2rem;
+    border-radius: 24px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .options {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .option label {
+    padding: 12px 20px;
+    font-size: 1rem;
   }
 }
